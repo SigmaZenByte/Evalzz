@@ -6,6 +6,7 @@ import { Loop } from "@/components/sections/Loop";
 import { Governance } from "@/components/sections/Governance";
 import { Moat } from "@/components/sections/Moat";
 import { AbuDhabi } from "@/components/sections/AbuDhabi";
+import { Team } from "@/components/sections/Team";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 
@@ -23,6 +24,7 @@ export default function Page() {
         <Governance />
         <Moat />
         <AbuDhabi />
+        <Team />
         <CTA />
       </main>
       <Footer />

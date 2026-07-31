@@ -116,4 +116,5 @@ vercel --prod   # production
 - `npm run build` runs a full type-check; `npm run typecheck` runs it alone.
 - The whole page is statically prerendered — no server runtime, no cold starts.
 - The share image at `/opengraph-image` is generated at build time. It fetches Instrument Serif from Google Fonts; if that's unreachable the card falls back to a default face rather than failing the build.
-- **Placeholders still to replace:** `hello@evalzz.ai` (in `cta.primary.href` and `footer.columns`), `meta.url`, and the design-partner counts in `cta.milestones`. The figures marked as placeholder in the investor deck are not on this page.
+- **Contact address:** `contactEmail` at the top of `content/site.ts`. Every mailto link and every visible instance reads from it, so changing that one line updates the whole site.
+- **Placeholders still to replace:** the design-partner counts in `cta.milestones`. The figures marked as placeholder in the investor deck are not on this page.

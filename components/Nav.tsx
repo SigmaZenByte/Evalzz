@@ -33,7 +33,8 @@ export function Nav() {
             Eval<span className="text-sienna">zz</span>
           </a>
 
-          <div className="hidden items-center gap-7 md:flex">
+          {/* Five links crowd the bar at 768px, so the row starts at lg. */}
+          <div className="hidden items-center gap-7 lg:flex">
             {site.nav.links.map((link) => (
               <a
                 key={link.href}
@@ -59,7 +60,7 @@ export function Nav() {
               aria-expanded={open}
               aria-controls="mobile-nav"
               aria-label={open ? "Close menu" : "Open menu"}
-              className="-mr-2 flex h-10 w-10 items-center justify-center md:hidden"
+              className="-mr-2 flex h-10 w-10 items-center justify-center lg:hidden"
             >
               <span className="relative block h-3 w-5">
                 <span
@@ -79,7 +80,7 @@ export function Nav() {
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t border-line bg-bone md:hidden">
+        <div id="mobile-nav" className="border-t border-line bg-bone lg:hidden">
           <Container>
             <div className="flex flex-col py-2">
               {site.nav.links.map((link) => (

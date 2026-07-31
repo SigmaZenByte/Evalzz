@@ -22,14 +22,25 @@ export type Layer = { index: string; tag: string; title: string; body: string };
 export type LoopStep = { name: string; body: string; gated: boolean };
 export type Rule = { index: string; title: string; body: string; outcome: string };
 export type Pillar = { title: string; body: string };
+export type Member = {
+  index: string;
+  name: string;
+  role: string;
+  facts: readonly string[];
+};
+
+/* Single source of truth for the contact address. Every mailto: link and
+   every place the address is shown reads from here — change it once. */
+export const contactEmail = "contact@evalzz.com";
 
 export const site = {
   /* ── Metadata: browser tab, search results, link previews ─────────────── */
   meta: {
     name: "EVALZZ",
+    email: contactEmail,
     /* Set this to your real domain before launch — it drives canonical URLs
        and social link previews. */
-    url: "https://evalzz.ai",
+    url: "https://evalzz.com",
     title: "EVALZZ — The AI brain that powers the hybrid workforce",
     description:
       "One live model of your policy, process and intent — with a human gate before anything executes. Governed agent orchestration for regulated enterprises.",
@@ -45,6 +56,7 @@ export const site = {
       { label: "Architecture", href: "#architecture" },
       { label: "Governance", href: "#governance" },
       { label: "Abu Dhabi", href: "#abu-dhabi" },
+      { label: "Team", href: "#team" },
     ] satisfies NavLink[],
     cta: { label: "Request access", href: "#access" } satisfies Action,
   },
@@ -185,13 +197,73 @@ export const site = {
     ] satisfies Pillar[],
   },
 
+  /* ── Founding team ────────────────────────────────────────────────────
+     Add or remove members freely — the grid reflows. Each `facts` entry
+     becomes its own hairline-separated row inside the card.              */
+  team: {
+    label: "Founding team",
+    heading:
+      "Operators who have scaled regulated businesses. Engineers who have already *built this stack.*",
+    members: [
+      {
+        index: "01",
+        name: "Imad",
+        role: "Co-founder & CEO",
+        facts: [
+          "600-car fleet, $14M+ revenue, exited 2021",
+          "Won Morgan Stanley, Columbia and Uber as clients",
+          "3 multi-million businesses, zero outside capital",
+          "15 years operating. Now based in Dubai.",
+        ],
+      },
+      {
+        index: "02",
+        name: "Abdullah",
+        role: "Co-founder & CFO / COO",
+        facts: [
+          "$50M+ vehicle finance programme built from zero",
+          "2,000+ units sold and financed",
+          "Licensed a NY State school through regulators",
+          "Ran finance for a regulated NYC institution",
+        ],
+      },
+      {
+        index: "03",
+        name: "Hammad Ali",
+        role: "Co-founder & CTO",
+        facts: [
+          "Ships hybrid RAG, knowledge graphs, MCP agents",
+          "Published a 320K-record NLP dataset",
+          "Winner, Smart India Hackathon 2024",
+          "98th of 32,000+, Amazon ML Challenge",
+        ],
+      },
+      {
+        index: "04",
+        name: "Md Aabid Hussain",
+        role: "Co-founder & Product Eng.",
+        facts: [
+          "Built the first Evalzz platform: 800 MAU",
+          "Architected it to 50,000 users",
+          "3 apps live on Play Store",
+          "1st nationally, Smart India Hackathon 2024",
+        ],
+      },
+    ] satisfies Member[],
+    footnote:
+      "Two operators who have already built multi-million-dollar businesses inside NYC's regulatory perimeter. Two engineers already shipping retrieval, knowledge graphs and agent orchestration in production. The company brain needs both halves.",
+  },
+
   /* ── Closing call to action ───────────────────────────────────────────── */
   cta: {
     label: "Design partners",
     heading: "Three design partners. One governed agent in *production.*",
     sub: "We are selecting a small number of design partners for the first correction ledger. One team, one named owner, one small provable purchase.",
     milestones: ["3 paid design partners", "1 governed agent live", "First correction ledger"],
-    primary: { label: "Request access", href: "mailto:hello@evalzz.ai?subject=Design%20partner%20enquiry" } satisfies Action,
+    primary: {
+      label: "Request access",
+      href: `mailto:${contactEmail}?subject=Design%20partner%20enquiry`,
+    } satisfies Action,
     secondary: { label: "Read the thesis", href: "#gap" } satisfies Action,
   },
 
@@ -203,7 +275,7 @@ export const site = {
         title: "Company",
         links: [
           { label: "Request access", href: "#access" },
-          { label: "hello@evalzz.ai", href: "mailto:hello@evalzz.ai" },
+          { label: contactEmail, href: `mailto:${contactEmail}` },
         ] satisfies NavLink[],
       },
       {

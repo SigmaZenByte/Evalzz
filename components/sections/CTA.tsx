@@ -32,6 +32,16 @@ export function CTA() {
             {cta.secondary.label}
           </Button>
         </div>
+
+        <p className="mt-5 text-[0.9rem] text-ink">
+          Or email{" "}
+          <a
+            href={`mailto:${site.meta.email}`}
+            className="text-sienna-deep underline decoration-line-strong underline-offset-4 transition-colors hover:decoration-sienna"
+          >
+            {site.meta.email}
+          </a>
+        </p>
       </Container>
     </section>
   );

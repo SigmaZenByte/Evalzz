@@ -68,16 +68,21 @@ export function SectionHead({
   label,
   heading,
   sub,
+  wide = false,
 }: {
   label: string;
   heading: string;
   sub?: string;
+  /** Lets a longer, two-sentence heading run wider before it wraps. */
+  wide?: boolean;
 }) {
   return (
     <div className="mb-12 grid gap-3 md:mb-14 md:grid-cols-[180px_1fr] md:gap-x-[clamp(1.5rem,4vw,3.5rem)]">
       <Label className="md:pt-3">{label}</Label>
       <div>
-        <h2 className="max-w-[19ch] font-display text-h2">{rich(heading)}</h2>
+        <h2 className={`font-display text-h2 ${wide ? "max-w-[30ch]" : "max-w-[19ch]"}`}>
+          {rich(heading)}
+        </h2>
         {sub ? <p className="mt-4 max-w-[54ch] text-ink text-lede">{sub}</p> : null}
       </div>
     </div>
