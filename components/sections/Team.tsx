@@ -5,8 +5,8 @@ import { Reveal } from "@/components/Reveal";
 export function Team() {
   const { team } = site;
 
+  /* Left on bone so the paper cards lift — the CTA that follows is shell. */
   return (
-    {/* Left on bone so the paper cards lift — the CTA that follows is shell. */}
     <section id="team" className="border-b border-line-strong py-section">
       <Container>
         <SectionHead label={team.label} heading={team.heading} wide />
