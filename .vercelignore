@@ -1,0 +1,5 @@
+# Kept out of the deployment upload. None of these are served by Next.js
+# anyway — this just keeps them out of the source Vercel stores.
+
+EVALZZ_Investor_Deck.md
+design-options/

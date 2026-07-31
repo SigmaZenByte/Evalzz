@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVALZZ — Option 02 · Institution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   OPTION 02 — "INSTITUTION"
+   Palette: ink navy + brass.  Type: Source Serif 4 / IBM Plex Sans / IBM Plex Mono
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0A1220; --bg-2:#0D1727; --surface:#111C2E; --surface-2:#16233A;
+  --line:#1D2C42; --line-2:#2A3D57;
+  --text:#EEF3F9; --text-2:#93A6BE; --text-3:#64788F;
+  --brass:#D9A441; --brass-lt:#F0CE8A; --brass-dk:#3B2E12;
+  --steel:#5D8FBF;
+
+  --display:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --body:'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+
+  --pad:clamp(20px,5vw,72px);
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;
+     line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.narrow{max-width:800px;margin:0 auto;padding:0 var(--pad)}
+
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.sect-no{font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--brass)}
+.rule{height:1px;background:var(--line);border:0}
+.brass-rule{height:1px;background:linear-gradient(90deg,var(--brass) 0%,var(--brass) 46px,var(--line) 46px);border:0}
+
+/* ── nav ── */
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
+    background:rgba(10,18,32,.9);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:24px}
+.logo{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:.14em}
+.logo span{color:var(--brass)}
+.navlinks{display:flex;gap:30px}
+.navlinks a{color:var(--text-2);text-decoration:none;font-size:14px}
+.navlinks a:hover{color:var(--brass)}
+.navcta{border:1px solid var(--brass);color:var(--brass);text-decoration:none;font-size:13px;
+        padding:9px 18px;letter-spacing:.02em}
+.navcta:hover{background:var(--brass);color:#0A1220}
+@media(max-width:860px){.navlinks{display:none}}
+
+/* ── hero ── */
+.hero{padding:clamp(72px,12vw,150px) 0 clamp(60px,9vw,110px);text-align:center;
+      border-bottom:1px solid var(--line);
+      background:radial-gradient(900px 420px at 50% -6%,rgba(217,164,65,.10),transparent 70%)}
+.stamp{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;
+       text-transform:uppercase;color:var(--brass);border-top:1px solid var(--line-2);
+       border-bottom:1px solid var(--line-2);padding:9px 0;margin-bottom:36px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,6.2vw,70px);line-height:1.08;
+   letter-spacing:-.018em;max-width:17ch;margin:0 auto}
+h1 em{font-style:italic;color:var(--brass-lt)}
+.lede{margin:26px auto 0;max-width:60ch;font-size:clamp(16px,1.55vw,18.5px);color:var(--text-2)}
+.hero-cta{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{font-size:14px;padding:14px 26px;text-decoration:none;display:inline-block;
+     border:1px solid transparent;letter-spacing:.01em}
+.btn-a{background:var(--brass);color:#0A1220;font-weight:600}
+.btn-a:hover{background:var(--brass-lt)}
+.btn-b{border-color:var(--line-2);color:var(--text)}
+.btn-b:hover{border-color:var(--brass);color:var(--brass)}
+
+/* ── ticker ── */
+.ticker{border-bottom:1px solid var(--line);background:var(--bg-2)}
+.ticker .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.ticker div{background:var(--bg-2);padding:28px 24px;text-align:center}
+.ticker .n{font-family:var(--display);font-size:clamp(28px,3.4vw,40px);font-weight:600;
+           color:var(--brass);letter-spacing:-.02em}
+.ticker .l{font-size:13px;color:var(--text-2);margin-top:8px;line-height:1.45}
+@media(max-width:760px){.ticker .wrap{grid-template-columns:1fr 1fr}}
+
+/* ── sections ── */
+section.blk{padding:clamp(70px,10vw,120px) 0;border-bottom:1px solid var(--line)}
+.head{text-align:center;margin-bottom:56px}
+.head .sect-no{display:block;margin-bottom:18px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.14;
+   letter-spacing:-.015em;max-width:22ch;margin:0 auto}
+.sub{color:var(--text-2);max-width:58ch;margin:18px auto 0;font-size:16.5px}
+
+/* ── failure ── */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+       border:1px solid var(--line)}
+.fgrid > div{background:var(--bg);padding:34px 32px}
+.fgrid .n{font-family:var(--display);font-size:44px;font-weight:600;letter-spacing:-.03em;line-height:1}
+.fgrid p{color:var(--text-2);margin-top:12px;font-size:15.5px}
+.fgrid .src{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+            color:var(--text-3);margin-top:16px}
+@media(max-width:660px){.fgrid{grid-template-columns:1fr}}
+
+/* ── layers ── */
+.layers{display:grid;gap:0}
+.layer{display:grid;grid-template-columns:88px 1fr;gap:34px;padding:34px 0;
+       border-top:1px solid var(--line);align-items:baseline}
+.layer:last-child{border-bottom:1px solid var(--line)}
+.layer .idx{font-family:var(--display);font-size:34px;color:var(--brass);font-weight:400;line-height:1}
+.layer h3{font-family:var(--display);font-size:24px;font-weight:600;letter-spacing:-.01em}
+.layer .tag{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+            color:var(--text-3);margin-top:7px}
+.layer p{color:var(--text-2);margin-top:12px;max-width:62ch}
+@media(max-width:640px){.layer{grid-template-columns:52px 1fr;gap:18px}.layer .idx{font-size:24px}}
+
+/* ── loop ── */
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);
+      border:1px solid var(--line)}
+.step{background:var(--bg);padding:26px 20px}
+.step .s{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:.08em;color:var(--brass)}
+.step p{font-size:14px;color:var(--text-2);margin-top:10px;line-height:1.5}
+.step .gate{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;
+            color:var(--text-3);margin-top:18px;display:block}
+.step.gated .gate{color:var(--brass)}
+@media(max-width:880px){.loop{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.loop{grid-template-columns:1fr}}
+
+/* ── rules ── */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{border:1px solid var(--line);background:var(--surface);padding:38px 34px;position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;width:56px;height:2px;background:var(--brass)}
+.card .num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--brass)}
+.card h3{font-family:var(--display);font-size:26px;font-weight:600;margin-top:16px;letter-spacing:-.01em}
+.card p{color:var(--text-2);margin-top:14px}
+.card .out{font-family:var(--display);font-style:italic;font-size:17px;color:var(--brass-lt);
+           margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+
+/* ── pull quote ── */
+.pull{padding:clamp(64px,9vw,110px) 0;text-align:center;border-bottom:1px solid var(--line);
+      background:var(--bg-2)}
+.pull p{font-family:var(--display);font-size:clamp(23px,3.3vw,38px);font-weight:400;line-height:1.26;
+        letter-spacing:-.015em;max-width:22ch;margin:0 auto}
+.pull em{font-style:italic;color:var(--brass)}
+.pull .attr{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+            color:var(--text-3);margin-top:32px}
+
+/* ── uae ── */
+.uae{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+     border:1px solid var(--line);margin-top:50px}
+.uae div{background:var(--bg);padding:28px 22px}
+.uae h4{font-family:var(--display);font-size:18px;font-weight:600;color:var(--brass)}
+.uae p{font-size:14px;color:var(--text-2);margin-top:9px;line-height:1.5}
+@media(max-width:820px){.uae{grid-template-columns:1fr 1fr}}
+
+/* ── cta ── */
+.cta{padding:clamp(72px,10vw,130px) 0;text-align:center;border-bottom:1px solid var(--line)}
+.milestones{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.milestones span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+                 border:1px solid var(--line-2);padding:8px 14px;color:var(--text-2)}
+
+footer{padding:36px 0;font-size:13px;color:var(--text-3)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+/* ── spec ── */
+.spec{border-top:1px solid var(--line-2);background:#070D17;padding:clamp(48px,7vw,84px) 0}
+.spec h4{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+         color:var(--text-3);margin-bottom:22px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px;margin-bottom:46px}
+.sw > div{border:1px solid var(--line)}
+.sw .chip{height:58px}
+.sw .meta{padding:9px 11px;font-family:var(--mono);font-size:9.5px;line-height:1.7}
+.sw .meta b{display:block;color:var(--text);text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+.sw .meta i{font-style:normal;color:var(--text-3)}
+.tscale > div{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:16px 0;
+              border-top:1px solid var(--line);align-items:baseline}
+.tscale .tag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--text-3);line-height:1.7}
+@media(max-width:680px){.tscale > div{grid-template-columns:1fr;gap:6px}}
+
+.badge{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--mono);font-size:10px;
+       letter-spacing:.14em;text-transform:uppercase;background:var(--brass);color:#0A1220;
+       padding:9px 13px;text-decoration:none;font-weight:500}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">EVAL<span>ZZ</span></div>
+    <div class="navlinks">
+      <a href="#failure">The gap</a><a href="#product">Architecture</a>
+      <a href="#rules">Governance</a><a href="#uae">Abu Dhabi</a>
+    </div>
+    <a class="navcta" href="#cta">Request access</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="stamp">Pre-seed &nbsp;·&nbsp; Hub71, Abu Dhabi &nbsp;·&nbsp; 2026</div>
+    <h1>The AI brain that powers the <em>hybrid workforce</em>.</h1>
+    <p class="lede">The enterprise stack was built for humans. The next decade runs on humans and agents. EVALZZ holds one live model of your policy, process and intent — and a human gate before anything executes.</p>
+    <div class="hero-cta">
+      <a class="btn btn-a" href="#cta">Become a design partner</a>
+      <a class="btn btn-b" href="#product">See the architecture</a>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap">
+    <div><div class="n">40%</div><div class="l">of enterprise apps embed agents by end-2026</div></div>
+    <div><div class="n">88%</div><div class="l">already use AI in a business function</div></div>
+    <div><div class="n">61%</div><div class="l">have funded agentic AI</div></div>
+    <div><div class="n">20%</div><div class="l">have mature AI governance</div></div>
+  </div>
+</div>
+
+<section class="blk" id="failure">
+  <div class="wrap">
+    <div class="head">
+      <span class="sect-no">03 — THE FAILURE</span>
+      <h2>The models work. The coordination does not.</h2>
+      <p class="sub">Every number below is a coordination failure, not a capability failure. That is the gap EVALZZ closes.</p>
+    </div>
+    <div class="fgrid">
+      <div><div class="n">95%</div><p>Of enterprise GenAI pilots deliver no measurable impact on the P&amp;L.</p><div class="src">MIT NANDA, 2025</div></div>
+      <div><div class="n">42%</div><p>Of multi-agent failures come from agent-to-agent miscommunication — not model error.</p><div class="src">Stanford, 2025</div></div>
+      <div><div class="n">40%+</div><p>Of agentic projects will be cancelled by end-2027 — cost, unclear value, weak risk controls.</p><div class="src">Gartner, Jun 2025</div></div>
+      <div><div class="n">23%</div><p>Of organisations have actually scaled an agentic system into production.</p><div class="src">Adoption data, 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="product">
+  <div class="wrap">
+    <div class="head">
+      <span class="sect-no">04 — THE PRODUCT</span>
+      <h2>One connected layer. Four jobs.</h2>
+      <p class="sub">We do not sell the platform. We earn it — the customer asks for each layer down.</p>
+    </div>
+    <div class="layers">
+      <div class="layer"><div class="idx">01</div>
+        <div><h3>Hybrid workforce</h3><div class="tag">we land here</div>
+        <p>One agent. One job. Narrow, specialised agents doing one team's real work — one workflow, weeks not quarters.</p></div></div>
+      <div class="layer"><div class="idx">02</div>
+        <div><h3>AI OS</h3><div class="tag">more context</div>
+        <p>Permissions-aware connectors across ERP, CRM, docs, ticketing and identity, delivering the right context at the moment of action.</p></div></div>
+      <div class="layer"><div class="idx">03</div>
+        <div><h3>Orchestration</h3><div class="tag">provable behaviour</div>
+        <p>Assigns work across the fleet. Pre-checks every action against policy and intent, verifies the outcome, writes an immutable audit log.</p></div></div>
+      <div class="layer"><div class="idx">04</div>
+        <div><h3>Company brain</h3><div class="tag">whole company</div>
+        <p>One live model of policy, process and intent — sharpened by every human-approved decision.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="sect-no">05 — THE LOOP</span>
+      <h2>A live loop, not a document dump.</h2>
+      <p class="sub">A static knowledge base goes stale in weeks. A looped, human-verified one gets sharper.</p>
+    </div>
+    <div class="loop">
+      <div class="step"><div class="s">SENSE</div><p>Ingest every artifact — rules, procedures, live activity.</p><span class="gate">autonomous</span></div>
+      <div class="step"><div class="s">COMPARE</div><p>Detect where reality has drifted from intent. Flag with evidence.</p><span class="gate">autonomous</span></div>
+      <div class="step gated"><div class="s">ACT</div><p>Propose the company's own validated procedure for that case.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">HUMAN</div><p>A human approves before anything executes.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">LEARN</div><p>Record the outcome, update the model, rewrite the procedure.</p><span class="gate">human-gated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="rules">
+  <div class="wrap">
+    <div class="head">
+      <span class="sect-no">06 — GOVERNANCE</span>
+      <h2>Two rules make this buyable in a regulated market.</h2>
+    </div>
+    <div class="two">
+      <div class="card"><div class="num">01</div><h3>Cite or abstain</h3>
+        <p>The brain only proposes actions it can ground in retrieved policy. If it cannot cite, it abstains.</p>
+        <div class="out">The reviewer never sees a guess.</div></div>
+      <div class="card"><div class="num">02</div><h3>Oversight where it counts</h3>
+        <p>Sensing and comparing run free. Nothing executes without approval.</p>
+        <div class="out">The human reviews decisions, not noise.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pull">
+  <div class="wrap">
+    <p>A rival can copy the connectors. They cannot copy four years of your company's <em>verified corrections</em>.</p>
+    <div class="attr">The moat — correction data does not transfer</div>
+  </div>
+</section>
+
+<section class="blk" id="uae">
+  <div class="wrap">
+    <div class="head">
+      <span class="sect-no">07 — ABU DHABI</span>
+      <h2>Sovereign capital, compute and regulated demand in one market.</h2>
+    </div>
+    <div class="uae">
+      <div><h4>ADGM RegLab</h4><p>Governed-agent sandbox inside a regulated environment — our credibility asset.</p></div>
+      <div><h4>Anchor buyers</h4><p>ADNOC, Mubadala portfolio, M42, TAQA — global-scale demand in one market.</p></div>
+      <div><h4>Sovereign AI</h4><p>In-country deployment for buyers who cannot send data offshore.</p></div>
+      <div><h4>Talent</h4><p>MBZUAI and TII pipeline for retrieval and agent research.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <h2>Three design partners. One governed agent in production.</h2>
+    <p class="sub">We are selecting a small number of design partners for the first correction ledger.</p>
+    <div class="milestones"><span>3 paid design partners</span><span>1 governed agent live</span><span>First correction ledger</span></div>
+    <div class="hero-cta"><a class="btn btn-a" href="#">Request access</a><a class="btn btn-b" href="#">Read the thesis</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>EVALZZ © 2026</span><span>Hub71 · Abu Dhabi</span><span>Pre-seed</span></div></footer>
+
+<!-- ══ design spec ══ -->
+<section class="spec">
+  <div class="wrap">
+    <h4>Option 02 — Institution · colour</h4>
+    <div class="sw">
+      <div><div class="chip" style="background:#0A1220"></div><div class="meta"><b>Ink</b><i>#0A1220</i></div></div>
+      <div><div class="chip" style="background:#111C2E"></div><div class="meta"><b>Surface</b><i>#111C2E</i></div></div>
+      <div><div class="chip" style="background:#1D2C42"></div><div class="meta"><b>Line</b><i>#1D2C42</i></div></div>
+      <div><div class="chip" style="background:#D9A441"></div><div class="meta"><b>Brass</b><i>#D9A441 · 8.4:1</i></div></div>
+      <div><div class="chip" style="background:#F0CE8A"></div><div class="meta"><b>Brass lt</b><i>#F0CE8A</i></div></div>
+      <div><div class="chip" style="background:#5D8FBF"></div><div class="meta"><b>Steel</b><i>#5D8FBF</i></div></div>
+      <div><div class="chip" style="background:#EEF3F9"></div><div class="meta"><b>Text</b><i>#EEF3F9</i></div></div>
+      <div><div class="chip" style="background:#93A6BE"></div><div class="meta"><b>Text 2</b><i>#93A6BE · 7.6:1</i></div></div>
+    </div>
+    <h4>Type — Source Serif 4 / IBM Plex Sans / IBM Plex Mono</h4>
+    <div class="tscale">
+      <div><div class="tag">Display · Source Serif 4 400<br>clamp(38–70px) · −1.8% track</div><div style="font-family:var(--display);font-size:42px;letter-spacing:-.018em;line-height:1.08">Governed <em style="color:var(--brass-lt)">autonomy</em></div></div>
+      <div><div class="tag">H2 · Source Serif 4 400<br>clamp(28–46px)</div><div style="font-family:var(--display);font-size:30px;letter-spacing:-.015em">One connected layer. Four jobs.</div></div>
+      <div><div class="tag">Body · IBM Plex Sans 400<br>16–18.5px · 1.62</div><div style="font-family:var(--body);font-size:17px;color:var(--text-2);max-width:52ch">Sensing and comparing run free. Nothing executes without approval — the human reviews decisions, not noise.</div></div>
+      <div><div class="tag">Micro · IBM Plex Mono 400<br>10–11px · +20% track · caps</div><div class="mono" style="color:var(--brass)">06 — GOVERNANCE</div></div>
+    </div>
+  </div>
+</section>
+
+<a class="badge" href="index.html">← Option 02 · Institution</a>
+</body>
+</html>

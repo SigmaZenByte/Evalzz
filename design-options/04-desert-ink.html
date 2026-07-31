@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVALZZ — Option 04 · Desert Ink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   OPTION 04 — "DESERT INK"
+   Palette: bone + espresso + burnt sienna + deep olive.
+   Type: Instrument Serif / Instrument Sans (no mono — letterspaced caps instead)
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#F6F1E7; --bg-2:#EFE8DA; --surface:#FFFDF8; --sand:#E3D6BE;
+  --line:#DDD3C1; --line-2:#C7BAA4;
+  --text:#211D18; --text-2:#5F564B; --text-3:#8A7F70;
+  --sienna:#BF4B24;       /* display, fills, rules */
+  --sienna-txt:#AB3E1C;   /* small text / links — 5.5:1 on bone */
+  --olive:#2E4F44; --olive-lt:#4F7566;
+
+  --display:'Instrument Serif',Georgia,serif;
+  --body:'Instrument Sans',ui-sans-serif,system-ui,sans-serif;
+
+  --pad:clamp(20px,5vw,72px);
+  --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;
+     line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+.label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sienna-txt)}
+.label-q{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3)}
+.hr{height:1px;background:var(--line);border:0}
+
+/* ── nav ── */
+nav{border-bottom:1px solid var(--line-2);position:sticky;top:0;z-index:20;
+    background:rgba(246,241,231,.92);backdrop-filter:blur(10px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px}
+.logo{font-family:var(--display);font-size:26px;letter-spacing:.02em}
+.logo span{color:var(--sienna)}
+.navlinks{display:flex;gap:28px}
+.navlinks a{color:var(--text-2);text-decoration:none;font-size:14px}
+.navlinks a:hover{color:var(--sienna-txt)}
+.navcta{background:var(--text);color:var(--bg);text-decoration:none;font-size:13.5px;
+        font-weight:500;padding:10px 18px}
+.navcta:hover{background:var(--sienna)}
+@media(max-width:860px){.navlinks{display:none}}
+
+/* ── hero ── */
+.hero{padding:clamp(56px,9vw,110px) 0 clamp(52px,8vw,92px);border-bottom:1px solid var(--line-2)}
+.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:clamp(28px,5vw,72px);align-items:end}
+.stamp{margin-bottom:30px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(46px,8vw,96px);line-height:.95;
+   letter-spacing:-.022em}
+h1 em{font-style:italic;color:var(--sienna)}
+.lede{font-size:clamp(16px,1.6vw,18px);color:var(--text-2);max-width:44ch;
+      padding-top:14px;border-top:2px solid var(--text)}
+.hero-cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-size:14.5px;font-weight:500;padding:13px 24px;text-decoration:none;display:inline-block;
+     border:1px solid transparent}
+.btn-a{background:var(--sienna);color:#FFF7F2}
+.btn-a:hover{background:var(--sienna-txt)}
+.btn-b{border-color:var(--line-2);color:var(--text)}
+.btn-b:hover{border-color:var(--text);background:var(--surface)}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;align-items:start}
+  .lede{border-top:1px solid var(--line-2);padding-top:20px;margin-top:8px}}
+
+/* ── numbers band ── */
+.nums{border-bottom:1px solid var(--line-2);background:var(--bg-2)}
+.nums .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.nums > .wrap > div{padding:30px 26px 30px 0;border-right:1px solid var(--line)}
+.nums > .wrap > div:last-child{border-right:0}
+.nums .n{font-family:var(--display);font-size:clamp(34px,4.4vw,52px);line-height:1;color:var(--sienna)}
+.nums .l{font-size:13.5px;color:var(--text-2);margin-top:10px;line-height:1.45;max-width:26ch}
+@media(max-width:760px){.nums .wrap{grid-template-columns:1fr 1fr}
+  .nums > .wrap > div{border-bottom:1px solid var(--line);padding-right:18px}
+  .nums > .wrap > div:nth-child(2n){border-right:0}}
+
+/* ── sections ── */
+section.blk{padding:clamp(64px,9vw,116px) 0;border-bottom:1px solid var(--line-2)}
+.head{display:grid;grid-template-columns:180px 1fr;gap:clamp(24px,4vw,56px);margin-bottom:52px;align-items:start}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,54px);line-height:1.04;
+   letter-spacing:-.02em;max-width:19ch}
+h2 em{font-style:italic;color:var(--sienna)}
+.sub{color:var(--text-2);max-width:54ch;margin-top:16px;font-size:16.5px}
+@media(max-width:760px){.head{grid-template-columns:1fr;gap:14px}}
+
+/* ── failure ── */
+.fail{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,5vw,64px)}
+.fail > div{padding:30px 0;border-top:1px solid var(--line);display:grid;
+            grid-template-columns:120px 1fr;gap:24px;align-items:start}
+.fail .n{font-family:var(--display);font-size:52px;line-height:.9;color:var(--text)}
+.fail p{color:var(--text-2);font-size:15px}
+.fail .src{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+           color:var(--text-3);margin-top:12px}
+@media(max-width:820px){.fail{grid-template-columns:1fr}}
+@media(max-width:480px){.fail > div{grid-template-columns:84px 1fr;gap:16px}.fail .n{font-size:38px}}
+
+/* ── layers ── */
+.layers{border-top:1px solid var(--line-2)}
+.layer{display:grid;grid-template-columns:180px 1fr 1.15fr;gap:clamp(20px,4vw,56px);
+       padding:32px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.layer .idx{font-family:var(--display);font-size:26px;color:var(--sienna)}
+.layer .idx span{font-size:11px;font-family:var(--body);font-weight:600;letter-spacing:.16em;
+                 text-transform:uppercase;color:var(--text-3);display:block;margin-top:2px}
+.layer h3{font-family:var(--display);font-size:29px;letter-spacing:-.01em;line-height:1.1}
+.layer p{color:var(--text-2);font-size:15.5px}
+@media(max-width:820px){.layer{grid-template-columns:1fr;gap:10px;padding:26px 0}
+  .layer .idx{font-size:20px}}
+
+/* ── loop ── */
+.loop{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line-2);background:var(--surface)}
+.step{padding:26px 20px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step.gated{background:var(--bg-2)}
+.step .s{font-family:var(--display);font-size:22px;color:var(--sienna)}
+.step p{font-size:13.5px;color:var(--text-2);margin-top:8px;line-height:1.5}
+.step .gate{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+            color:var(--text-3);margin-top:18px;display:block}
+.step.gated .gate{color:var(--olive)}
+@media(max-width:880px){.loop{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--line)}.step:nth-child(2n){border-right:0}}
+@media(max-width:500px){.loop{grid-template-columns:1fr}.step{border-right:0}}
+
+/* ── rules ── */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px)}
+.rule{border-top:2px solid var(--sienna);padding-top:26px}
+.rule .num{font-family:var(--display);font-size:30px;color:var(--sienna)}
+.rule h3{font-family:var(--display);font-size:31px;margin-top:6px;line-height:1.08;letter-spacing:-.01em}
+.rule p{color:var(--text-2);margin-top:14px}
+.rule .out{font-family:var(--display);font-style:italic;font-size:20px;color:var(--olive);
+           margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+@media(max-width:720px){.two{grid-template-columns:1fr;gap:40px}}
+
+/* ── moat band (olive) ── */
+.band{background:var(--olive);color:#F1EFE7;padding:clamp(64px,9vw,116px) 0}
+.band .label{color:#A9C4B7}
+.band p.big{font-family:var(--display);font-size:clamp(28px,4.4vw,54px);line-height:1.08;
+            letter-spacing:-.02em;max-width:20ch;margin-top:22px}
+.band p.big em{font-style:italic;color:#F0B79E}
+.band .note{color:#B8C9C1;margin-top:22px;max-width:52ch}
+
+/* ── uae ── */
+.uae{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px)}
+.uae > div{border-top:1px solid var(--line-2);padding-top:20px}
+.uae h4{font-family:var(--display);font-size:23px;color:var(--sienna)}
+.uae p{font-size:14.5px;color:var(--text-2);margin-top:8px}
+@media(max-width:820px){.uae{grid-template-columns:1fr 1fr}}
+
+/* ── cta ── */
+.cta{padding:clamp(64px,9vw,120px) 0;border-bottom:1px solid var(--line-2);background:var(--bg-2)}
+.cta h2{font-size:clamp(32px,5.4vw,62px)}
+.milestones{display:flex;gap:0;flex-wrap:wrap;margin-top:30px;border-top:1px solid var(--line-2)}
+.milestones span{padding:16px 26px 16px 0;border-right:1px solid var(--line);
+                 font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+                 color:var(--text-2);margin-right:26px}
+.milestones span:last-child{border-right:0;margin-right:0}
+
+footer{padding:34px 0;font-size:13px;color:var(--text-3)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+/* ── spec ── */
+.spec{border-top:1px solid var(--line-2);background:var(--surface);padding:clamp(48px,7vw,84px) 0}
+.spec h4{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+         color:var(--text-3);margin-bottom:22px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:10px;margin-bottom:46px}
+.sw > div{border:1px solid var(--line)}
+.sw .chip{height:58px}
+.sw .meta{padding:9px 11px;font-size:10px;line-height:1.7}
+.sw .meta b{display:block;text-transform:uppercase;letter-spacing:.12em;font-weight:600;font-size:9.5px}
+.sw .meta i{font-style:normal;color:var(--text-3);font-variant-numeric:tabular-nums}
+.tscale > div{display:grid;grid-template-columns:220px 1fr;gap:26px;padding:18px 0;
+              border-top:1px solid var(--line);align-items:baseline}
+.tscale .tag{font-size:10.5px;font-weight:500;letter-spacing:.06em;color:var(--text-3);line-height:1.8}
+@media(max-width:680px){.tscale > div{grid-template-columns:1fr;gap:6px}}
+
+.badge{position:fixed;right:14px;bottom:14px;z-index:50;font-size:10px;font-weight:600;
+       letter-spacing:.14em;text-transform:uppercase;background:var(--sienna);color:#FFF7F2;
+       padding:10px 14px;text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Eval<span>zz</span></div>
+    <div class="navlinks">
+      <a href="#failure">The gap</a><a href="#product">Architecture</a>
+      <a href="#rules">Governance</a><a href="#uae">Abu Dhabi</a>
+    </div>
+    <a class="navcta" href="#cta">Request access</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="stamp"><span class="label">Pre-seed · Hub71, Abu Dhabi · 2026</span></div>
+    <div class="hero-grid">
+      <h1>The AI brain that powers the <em>hybrid workforce</em>.</h1>
+      <div>
+        <p class="lede">The enterprise stack was built for humans. The next decade runs on humans and agents. EVALZZ holds one live model of your policy, process and intent — and a human gate before anything executes.</p>
+        <div class="hero-cta">
+          <a class="btn btn-a" href="#cta">Become a design partner</a>
+          <a class="btn btn-b" href="#product">See the architecture</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="nums">
+  <div class="wrap">
+    <div><div class="n">40%</div><div class="l">of enterprise apps embed task-specific agents by end-2026 — from under 5%</div></div>
+    <div><div class="n">88%</div><div class="l">of organisations already use AI in a business function</div></div>
+    <div><div class="n">61%</div><div class="l">of enterprises have already funded agentic AI</div></div>
+    <div><div class="n">20%</div><div class="l">have a mature AI governance model</div></div>
+  </div>
+</div>
+
+<section class="blk" id="failure">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The failure</span>
+      <div><h2>The models work. The <em>coordination</em> does not.</h2>
+      <p class="sub">Every number below is a coordination failure, not a capability failure. That is the gap EVALZZ closes.</p></div>
+    </div>
+    <div class="fail">
+      <div><div class="n">95%</div><div><p>Of enterprise GenAI pilots deliver no measurable impact on the P&amp;L.</p><div class="src">MIT NANDA, 2025</div></div></div>
+      <div><div class="n">42%</div><div><p>Of multi-agent failures come from agent-to-agent miscommunication — not model error.</p><div class="src">Stanford, 2025</div></div></div>
+      <div><div class="n">40%</div><div><p>Of agentic projects will be cancelled by end-2027 — cost, unclear value, weak risk controls.</p><div class="src">Gartner, Jun 2025</div></div></div>
+      <div><div class="n">23%</div><div><p>Of organisations have actually scaled an agentic system into production.</p><div class="src">Adoption data, 2026</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="product">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The product</span>
+      <div><h2>One connected layer. <em>Four jobs.</em></h2>
+      <p class="sub">We do not sell the platform. We earn it — the customer asks for each layer down.</p></div>
+    </div>
+    <div class="layers">
+      <div class="layer"><div class="idx">01<span>we land here</span></div>
+        <h3>Hybrid workforce</h3>
+        <p>One agent. One job. Narrow, specialised agents doing one team's real work — one workflow, weeks not quarters.</p></div>
+      <div class="layer"><div class="idx">02<span>more context</span></div>
+        <h3>AI OS</h3>
+        <p>Permissions-aware connectors across ERP, CRM, docs, ticketing and identity, delivering the right context at the moment of action.</p></div>
+      <div class="layer"><div class="idx">03<span>provable behaviour</span></div>
+        <h3>Orchestration</h3>
+        <p>Pre-checks every action against policy and intent, verifies the outcome, writes an immutable audit log.</p></div>
+      <div class="layer"><div class="idx">04<span>whole company</span></div>
+        <h3>Company brain</h3>
+        <p>One live model of policy, process and intent — sharpened by every human-approved decision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">The loop</span>
+      <div><h2>A live loop, not a <em>document dump.</em></h2>
+      <p class="sub">A static knowledge base goes stale in weeks. A looped, human-verified one gets sharper.</p></div>
+    </div>
+    <div class="loop">
+      <div class="step"><div class="s">Sense</div><p>Ingest every artifact — rules, procedures, live activity.</p><span class="gate">autonomous</span></div>
+      <div class="step"><div class="s">Compare</div><p>Detect where reality has drifted from intent. Flag with evidence.</p><span class="gate">autonomous</span></div>
+      <div class="step gated"><div class="s">Act</div><p>Propose the company's own validated procedure for that case.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">Human</div><p>A human approves before anything executes.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">Learn</div><p>Record the outcome, update the model, rewrite the procedure.</p><span class="gate">human-gated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="rules">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Governance</span>
+      <div><h2>Two rules make this buyable in a <em>regulated market.</em></h2></div>
+    </div>
+    <div class="two">
+      <div class="rule"><div class="num">01</div><h3>Cite or abstain</h3>
+        <p>The brain only proposes actions it can ground in retrieved policy. If it cannot cite, it abstains.</p>
+        <div class="out">The reviewer never sees a guess.</div></div>
+      <div class="rule"><div class="num">02</div><h3>Oversight where it counts</h3>
+        <p>Sensing and comparing run free. Nothing executes without approval.</p>
+        <div class="out">The human reviews decisions, not noise.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="label">The moat</span>
+    <p class="big">A rival can copy the connectors. They cannot copy four years of your company's <em>verified corrections</em>.</p>
+    <p class="note">The correction data does not transfer. It is generated by one company's own approved decisions — and it compounds with every agent deployed.</p>
+  </div>
+</section>
+
+<section class="blk" id="uae">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Abu Dhabi</span>
+      <div><h2>Sovereign capital, compute and regulated demand in <em>one market.</em></h2></div>
+    </div>
+    <div class="uae">
+      <div><h4>ADGM RegLab</h4><p>Governed-agent sandbox inside a regulated environment — our credibility asset.</p></div>
+      <div><h4>Anchor buyers</h4><p>ADNOC, Mubadala portfolio, M42, TAQA — global-scale demand in one market.</p></div>
+      <div><h4>Sovereign AI</h4><p>In-country deployment for buyers who cannot send data offshore.</p></div>
+      <div><h4>Talent</h4><p>MBZUAI and TII pipeline for retrieval and agent research.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <h2>Three design partners. One governed agent in <em>production.</em></h2>
+    <p class="sub">We are selecting a small number of design partners for the first correction ledger.</p>
+    <div class="milestones"><span>3 paid design partners</span><span>1 governed agent live</span><span>First correction ledger</span></div>
+    <div class="hero-cta"><a class="btn btn-a" href="#">Request access</a><a class="btn btn-b" href="#">Read the thesis</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>EVALZZ © 2026</span><span>Hub71 · Abu Dhabi</span><span>Pre-seed</span></div></footer>
+
+<!-- ══ design spec ══ -->
+<section class="spec">
+  <div class="wrap">
+    <h4>Option 04 — Desert Ink · colour</h4>
+    <div class="sw">
+      <div><div class="chip" style="background:#F6F1E7"></div><div class="meta"><b>Bone</b><i>#F6F1E7</i></div></div>
+      <div><div class="chip" style="background:#EFE8DA"></div><div class="meta"><b>Surface</b><i>#EFE8DA</i></div></div>
+      <div><div class="chip" style="background:#DDD3C1"></div><div class="meta"><b>Line</b><i>#DDD3C1</i></div></div>
+      <div><div class="chip" style="background:#BF4B24"></div><div class="meta"><b>Sienna</b><i>#BF4B24 · display</i></div></div>
+      <div><div class="chip" style="background:#AB3E1C"></div><div class="meta"><b>Sienna txt</b><i>#AB3E1C · 5.5:1</i></div></div>
+      <div><div class="chip" style="background:#2E4F44"></div><div class="meta"><b>Olive</b><i>#2E4F44 · 8.1:1</i></div></div>
+      <div><div class="chip" style="background:#211D18"></div><div class="meta"><b>Espresso</b><i>#211D18 · 15.2:1</i></div></div>
+      <div><div class="chip" style="background:#5F564B"></div><div class="meta"><b>Text 2</b><i>#5F564B · 6.5:1</i></div></div>
+    </div>
+    <h4>Type — Instrument Serif / Instrument Sans</h4>
+    <div class="tscale">
+      <div><div class="tag">Display · Instrument Serif 400<br>clamp(46–96px) · −2.2% track · 0.95 lh</div><div style="font-family:var(--display);font-size:50px;letter-spacing:-.022em;line-height:.98">Governed <em style="color:var(--sienna)">autonomy</em></div></div>
+      <div><div class="tag">H2 · Instrument Serif 400<br>clamp(30–54px)</div><div style="font-family:var(--display);font-size:34px;letter-spacing:-.02em">One connected layer. Four jobs.</div></div>
+      <div><div class="tag">Body · Instrument Sans 400<br>16–18px · 1.62</div><div style="font-family:var(--body);font-size:16.5px;color:var(--text-2);max-width:52ch">Sensing and comparing run free. Nothing executes without approval — the human reviews decisions, not noise.</div></div>
+      <div><div class="tag">Micro · Instrument Sans 600<br>11px · +20% track · caps (no mono)</div><div class="label">The moat · correction data does not transfer</div></div>
+    </div>
+  </div>
+</section>
+
+<a class="badge" href="index.html">← Option 04 · Desert Ink</a>
+</body>
+</html>

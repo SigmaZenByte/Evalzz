@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EVALZZ — Option 03 · Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   OPTION 03 — "BLUEPRINT"
+   Palette: paper white + graphite + cobalt.  Type: Inter Tight / Inter / DM Mono
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#FFFFFF; --bg-2:#F7F8FA; --bg-3:#EEF1F5;
+  --line:#E4E7EC; --line-2:#CDD4DD;
+  --text:#0D1117; --text-2:#525C69; --text-3:#7B8695;
+  --accent:#0F5FE0; --accent-tint:#EAF1FE; --accent-dk:#0B47A8;
+  --verified:#0E9F6E; --verified-tint:#E6F6F0;
+  --alert:#D93036; --alert-tint:#FDECEC;
+
+  --display:'Inter Tight',ui-sans-serif,system-ui,sans-serif;
+  --body:'Inter',ui-sans-serif,system-ui,sans-serif;
+  --mono:'DM Mono',ui-monospace,monospace;
+
+  --pad:clamp(20px,5vw,64px);
+  --max:1160px;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;
+     line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+        color:var(--accent);margin-bottom:16px}
+
+/* ── nav ── */
+nav{border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;
+    background:rgba(255,255,255,.88);backdrop-filter:blur(12px)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:24px}
+.logo{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em;
+      display:flex;align-items:center;gap:9px}
+.mark{width:18px;height:18px;border-radius:4px;background:var(--accent);position:relative}
+.mark::after{content:'';position:absolute;inset:5px 5px auto auto;width:6px;height:6px;
+             border-radius:2px;background:#fff}
+.navlinks{display:flex;gap:28px}
+.navlinks a{color:var(--text-2);text-decoration:none;font-size:14px;font-weight:500}
+.navlinks a:hover{color:var(--text)}
+.navcta{background:var(--text);color:#fff;text-decoration:none;font-size:13.5px;font-weight:500;
+        padding:9px 16px;border-radius:var(--r)}
+.navcta:hover{background:var(--accent)}
+@media(max-width:860px){.navlinks{display:none}}
+
+/* ── hero ── */
+.hero{padding:clamp(60px,10vw,120px) 0 clamp(56px,8vw,96px);border-bottom:1px solid var(--line);
+      background-image:radial-gradient(var(--line-2) 1px,transparent 1px);
+      background-size:26px 26px;background-position:center;
+      -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0) 78%);
+      mask-image:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0) 78%)}
+.hero .inner{background:transparent}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent-tint);
+      color:var(--accent-dk);border:1px solid #D3E2FC;border-radius:100px;padding:5px 13px;
+      font-family:var(--mono);font-size:11px;letter-spacing:.05em;margin-bottom:28px}
+.pill i{width:5px;height:5px;border-radius:50%;background:var(--accent);display:block}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6.2vw,68px);line-height:1.03;
+   letter-spacing:-.038em;max-width:15ch}
+h1 span{color:var(--accent)}
+.lede{margin-top:24px;max-width:58ch;font-size:clamp(16px,1.55vw,18.5px);color:var(--text-2)}
+.hero-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:11px;align-items:center}
+.btn{font-size:14.5px;font-weight:500;padding:12px 22px;text-decoration:none;display:inline-block;
+     border-radius:var(--r);border:1px solid transparent}
+.btn-a{background:var(--accent);color:#fff}
+.btn-a:hover{background:var(--accent-dk)}
+.btn-b{border-color:var(--line-2);color:var(--text);background:#fff}
+.btn-b:hover{border-color:var(--text-3)}
+.trust{margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--text-3)}
+
+/* ── panel mock ── */
+.panel{margin-top:54px;border:1px solid var(--line);border-radius:10px;background:#fff;
+       box-shadow:0 1px 2px rgba(13,17,23,.04),0 12px 32px -12px rgba(13,17,23,.10);overflow:hidden}
+.panel .bar{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;
+            border-bottom:1px solid var(--line);background:var(--bg-2);
+            font-family:var(--mono);font-size:11px;color:var(--text-3)}
+.row{display:grid;grid-template-columns:104px 1fr 132px 100px;gap:16px;padding:13px 16px;
+     border-bottom:1px solid var(--line);align-items:center;font-size:13.5px}
+.row:last-child{border-bottom:0}
+.row .t{font-family:var(--mono);font-size:11.5px;color:var(--text-3)}
+.row .d{color:var(--text)}
+.row .p{font-family:var(--mono);font-size:11px;color:var(--text-2)}
+.badge-s{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;padding:3px 9px;
+         border-radius:100px;display:inline-block;text-transform:uppercase}
+.ok{background:var(--verified-tint);color:#0A7C55}
+.no{background:var(--alert-tint);color:#B3242A}
+.wait{background:var(--accent-tint);color:var(--accent-dk)}
+@media(max-width:760px){.row{grid-template-columns:1fr 96px}.row .t,.row .p{display:none}}
+
+/* ── logos strip ── */
+.strip{border-bottom:1px solid var(--line);background:var(--bg-2);padding:22px 0}
+.strip .wrap{display:flex;gap:34px;flex-wrap:wrap;align-items:center;
+             font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+             text-transform:uppercase;color:var(--text-3)}
+
+/* ── sections ── */
+section.blk{padding:clamp(64px,9vw,110px) 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(27px,3.6vw,42px);line-height:1.1;
+   letter-spacing:-.03em;max-width:20ch}
+.sub{color:var(--text-2);max-width:58ch;margin-top:14px}
+
+/* ── stat cards ── */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:24px 22px;background:#fff}
+.stat .n{font-family:var(--display);font-size:36px;font-weight:600;letter-spacing:-.035em;line-height:1}
+.stat p{font-size:14px;color:var(--text-2);margin-top:12px;line-height:1.5}
+.stat .src{font-family:var(--mono);font-size:10px;color:var(--text-3);margin-top:16px;
+           padding-top:12px;border-top:1px solid var(--line)}
+@media(max-width:900px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}}
+
+/* ── layers ── */
+.lgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px}
+.lcard{border:1px solid var(--line);border-radius:8px;padding:28px 26px;background:#fff;
+       transition:border-color .15s,box-shadow .15s}
+.lcard:hover{border-color:var(--line-2);box-shadow:0 4px 20px -8px rgba(13,17,23,.12)}
+.lcard .top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.lcard .idx{font-family:var(--mono);font-size:11px;color:#fff;background:var(--accent);
+            border-radius:4px;padding:2px 7px}
+.lcard .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3)}
+.lcard h3{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.02em}
+.lcard p{color:var(--text-2);font-size:14.5px;margin-top:9px}
+@media(max-width:720px){.lgrid{grid-template-columns:1fr}}
+
+/* ── loop ── */
+.loop{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:44px}
+.step{border:1px solid var(--line);border-radius:8px;padding:20px 18px;background:#fff}
+.step.gated{border-color:#D3E2FC;background:linear-gradient(180deg,var(--accent-tint),#fff 60%)}
+.step .s{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.06em}
+.step p{font-size:13px;color:var(--text-2);margin-top:9px;line-height:1.5}
+.step .gate{font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;
+            margin-top:16px;display:inline-block;padding:3px 8px;border-radius:100px;
+            background:var(--bg-3);color:var(--text-3)}
+.step.gated .gate{background:var(--accent);color:#fff}
+@media(max-width:900px){.loop{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.loop{grid-template-columns:1fr}}
+
+/* ── rules ── */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+.rule{border:1px solid var(--line);border-radius:8px;padding:32px 30px;background:var(--bg-2)}
+.rule .num{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--accent)}
+.rule h3{font-family:var(--display);font-size:22px;font-weight:600;margin-top:12px;letter-spacing:-.025em}
+.rule p{color:var(--text-2);margin-top:11px;font-size:15px}
+.rule .out{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
+           font-weight:500;font-size:14.5px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+
+/* ── moat band ── */
+.band{background:var(--text);color:#fff;padding:clamp(56px,8vw,96px) 0}
+.band .kicker{color:#7FA9F5}
+.band p{font-family:var(--display);font-size:clamp(22px,3.1vw,36px);font-weight:600;
+        letter-spacing:-.03em;line-height:1.2;max-width:24ch}
+.band p span{color:#7FA9F5}
+.band .note{color:#98A2B0;margin-top:20px;max-width:52ch;font-size:15.5px}
+
+/* ── cta ── */
+.cta{padding:clamp(64px,9vw,110px) 0;border-bottom:1px solid var(--line);text-align:center}
+.cta h2{margin:0 auto}
+.cta .sub{margin-left:auto;margin-right:auto}
+.cta .hero-cta{justify-content:center}
+.milestones{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.milestones span{font-family:var(--mono);font-size:11px;letter-spacing:.05em;border:1px solid var(--line);
+                 border-radius:100px;padding:6px 13px;color:var(--text-2)}
+
+footer{padding:32px 0;font-size:13px;color:var(--text-3)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+
+/* ── spec ── */
+.spec{border-top:1px solid var(--line);background:var(--bg-2);padding:clamp(48px,7vw,80px) 0}
+.spec h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+         color:var(--text-3);margin-bottom:20px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(132px,1fr));gap:10px;margin-bottom:44px}
+.sw > div{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.sw .chip{height:56px}
+.sw .meta{padding:9px 11px;font-family:var(--mono);font-size:9.5px;line-height:1.7}
+.sw .meta b{display:block;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.sw .meta i{font-style:normal;color:var(--text-3)}
+.tscale > div{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:16px 0;
+              border-top:1px solid var(--line);align-items:baseline}
+.tscale .tag{font-family:var(--mono);font-size:10px;color:var(--text-3);line-height:1.7}
+@media(max-width:680px){.tscale > div{grid-template-columns:1fr;gap:6px}}
+
+.badge{position:fixed;right:14px;bottom:14px;z-index:50;font-family:var(--mono);font-size:10px;
+       letter-spacing:.08em;text-transform:uppercase;background:var(--text);color:#fff;
+       padding:9px 13px;text-decoration:none;border-radius:100px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="mark"></span>EVALZZ</div>
+    <div class="navlinks">
+      <a href="#failure">The gap</a><a href="#product">Product</a>
+      <a href="#rules">Governance</a><a href="#uae">Abu Dhabi</a>
+    </div>
+    <a class="navcta" href="#cta">Request access</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="pill"><i></i>Pre-seed · Hub71, Abu Dhabi · 2026</span>
+    <h1>The AI brain that powers the <span>hybrid workforce</span>.</h1>
+    <p class="lede">The enterprise stack was built for humans. The next decade runs on humans and agents. EVALZZ is one live model of your policy, process and intent — with a human gate before anything executes.</p>
+    <div class="hero-cta">
+      <a class="btn btn-a" href="#cta">Become a design partner</a>
+      <a class="btn btn-b" href="#product">See the architecture</a>
+    </div>
+    <div class="trust">No rip-and-replace · One team, one workflow · Weeks, not quarters</div>
+
+    <div class="panel">
+      <div class="bar"><span>orchestration / audit log</span><span>immutable · live</span></div>
+      <div class="row"><span class="t">10:42:07</span><span class="d">Vendor invoice reconciliation — AP agent</span><span class="p">policy AP-14 §3</span><span class="badge-s ok">Executed</span></div>
+      <div class="row"><span class="t">10:42:31</span><span class="d">Contract renewal terms — Legal agent</span><span class="p">no citation found</span><span class="badge-s no">Blocked</span></div>
+      <div class="row"><span class="t">10:43:16</span><span class="d">Customer refund above threshold — CS agent</span><span class="p">policy CS-02 §7</span><span class="badge-s wait">Awaiting human</span></div>
+      <div class="row"><span class="t">10:43:52</span><span class="d">Procedure drift detected — Company brain</span><span class="p">evidence attached</span><span class="badge-s ok">Flagged</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="strip"><div class="wrap">
+  <span>ADGM RegLab</span><span>Hub71</span><span>Sovereign deployment</span>
+  <span>SOC-2 track</span><span>In-country data residency</span>
+</div></div>
+
+<section class="blk" id="failure">
+  <div class="wrap">
+    <div class="kicker">The gap</div>
+    <h2>The models work. The coordination does not.</h2>
+    <p class="sub">Every number below is a coordination failure, not a capability failure. That is the gap EVALZZ closes.</p>
+    <div class="cards">
+      <div class="stat"><div class="n" style="color:var(--alert)">95%</div><p>Of enterprise GenAI pilots deliver no measurable impact on the P&amp;L.</p><div class="src">MIT NANDA, 2025</div></div>
+      <div class="stat"><div class="n" style="color:var(--alert)">42%</div><p>Of multi-agent failures come from agent-to-agent miscommunication — not model error.</p><div class="src">Stanford, 2025</div></div>
+      <div class="stat"><div class="n" style="color:var(--alert)">40%+</div><p>Of agentic projects will be cancelled by end-2027 — cost, unclear value, weak risk controls.</p><div class="src">Gartner, Jun 2025</div></div>
+      <div class="stat"><div class="n" style="color:var(--alert)">23%</div><p>Of organisations have actually scaled an agentic system into production.</p><div class="src">Adoption data, 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="product">
+  <div class="wrap">
+    <div class="kicker">The product</div>
+    <h2>One connected layer. Four jobs.</h2>
+    <p class="sub">We do not sell the platform. We earn it — the customer asks for each layer down.</p>
+    <div class="lgrid">
+      <div class="lcard"><div class="top"><span class="idx">01</span><span class="tag">we land here</span></div>
+        <h3>Hybrid workforce</h3><p>One agent. One job. Narrow, specialised agents doing one team's real work — one workflow, weeks not quarters.</p></div>
+      <div class="lcard"><div class="top"><span class="idx">02</span><span class="tag">more context</span></div>
+        <h3>AI OS</h3><p>Permissions-aware connectors across ERP, CRM, docs, ticketing and identity, delivering the right context at the moment of action.</p></div>
+      <div class="lcard"><div class="top"><span class="idx">03</span><span class="tag">provable behaviour</span></div>
+        <h3>Orchestration</h3><p>Pre-checks every action against policy and intent, verifies the outcome, writes an immutable audit log.</p></div>
+      <div class="lcard"><div class="top"><span class="idx">04</span><span class="tag">whole company</span></div>
+        <h3>Company brain</h3><p>One live model of policy, process and intent — sharpened by every human-approved decision.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <div class="kicker">The loop</div>
+    <h2>A live loop, not a document dump.</h2>
+    <p class="sub">A static knowledge base goes stale in weeks. A looped, human-verified one gets sharper.</p>
+    <div class="loop">
+      <div class="step"><div class="s">SENSE</div><p>Ingest every artifact — rules, procedures, live activity.</p><span class="gate">autonomous</span></div>
+      <div class="step"><div class="s">COMPARE</div><p>Detect where reality has drifted from intent. Flag with evidence.</p><span class="gate">autonomous</span></div>
+      <div class="step gated"><div class="s">ACT</div><p>Propose the company's own validated procedure for that case.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">HUMAN</div><p>A human approves before anything executes.</p><span class="gate">human-gated</span></div>
+      <div class="step gated"><div class="s">LEARN</div><p>Record the outcome, update the model, rewrite the procedure.</p><span class="gate">human-gated</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="rules">
+  <div class="wrap">
+    <div class="kicker">Governance</div>
+    <h2>Two rules make this buyable in a regulated market.</h2>
+    <div class="two">
+      <div class="rule"><div class="num">01</div><h3>Cite or abstain</h3>
+        <p>The brain only proposes actions it can ground in retrieved policy. If it cannot cite, it abstains.</p>
+        <div class="out">The reviewer never sees a guess.</div></div>
+      <div class="rule"><div class="num">02</div><h3>Oversight where it counts</h3>
+        <p>Sensing and comparing run free. Nothing executes without approval.</p>
+        <div class="out">The human reviews decisions, not noise.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="kicker">The moat</div>
+    <p>A rival can copy the connectors. They cannot copy four years of your company's <span>verified corrections</span>.</p>
+    <p class="note">The correction data does not transfer. It is generated by one company's own approved decisions — and it compounds with every agent deployed.</p>
+  </div>
+</section>
+
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div class="kicker" id="uae" style="text-align:center">Abu Dhabi</div>
+    <h2>Three design partners. One governed agent in production.</h2>
+    <p class="sub">ADGM RegLab sandbox, in-country deployment, MBZUAI and TII talent — the one market where sovereign capital, compute and regulated demand sit together.</p>
+    <div class="milestones"><span>3 paid design partners</span><span>1 governed agent live</span><span>First correction ledger</span></div>
+    <div class="hero-cta"><a class="btn btn-a" href="#">Request access</a><a class="btn btn-b" href="#">Read the thesis</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>EVALZZ © 2026</span><span>Hub71 · Abu Dhabi</span><span>Pre-seed</span></div></footer>
+
+<!-- ══ design spec ══ -->
+<section class="spec">
+  <div class="wrap">
+    <h4>Option 03 — Blueprint · colour</h4>
+    <div class="sw">
+      <div><div class="chip" style="background:#FFFFFF;border-bottom:1px solid #E4E7EC"></div><div class="meta"><b>Paper</b><i>#FFFFFF</i></div></div>
+      <div><div class="chip" style="background:#F7F8FA"></div><div class="meta"><b>Surface</b><i>#F7F8FA</i></div></div>
+      <div><div class="chip" style="background:#E4E7EC"></div><div class="meta"><b>Line</b><i>#E4E7EC</i></div></div>
+      <div><div class="chip" style="background:#0F5FE0"></div><div class="meta"><b>Cobalt</b><i>#0F5FE0 · 5.6:1</i></div></div>
+      <div><div class="chip" style="background:#0E9F6E"></div><div class="meta"><b>Verified</b><i>#0E9F6E</i></div></div>
+      <div><div class="chip" style="background:#D93036"></div><div class="meta"><b>Blocked</b><i>#D93036</i></div></div>
+      <div><div class="chip" style="background:#0D1117"></div><div class="meta"><b>Ink</b><i>#0D1117 · 18.1:1</i></div></div>
+      <div><div class="chip" style="background:#525C69"></div><div class="meta"><b>Text 2</b><i>#525C69 · 6.8:1</i></div></div>
+    </div>
+    <h4>Type — Inter Tight / Inter / DM Mono</h4>
+    <div class="tscale">
+      <div><div class="tag">Display · Inter Tight 600<br>clamp(38–68px) · −3.8% track</div><div style="font-family:var(--display);font-weight:600;font-size:40px;letter-spacing:-.038em;line-height:1.05">Governed <span style="color:var(--accent)">autonomy</span></div></div>
+      <div><div class="tag">H2 · Inter Tight 600<br>clamp(27–42px)</div><div style="font-family:var(--display);font-weight:600;font-size:29px;letter-spacing:-.03em">One connected layer. Four jobs.</div></div>
+      <div><div class="tag">Body · Inter 400<br>16–18.5px · 1.6</div><div style="font-family:var(--body);font-size:16.5px;color:var(--text-2);max-width:52ch">Sensing and comparing run free. Nothing executes without approval — the human reviews decisions, not noise.</div></div>
+      <div><div class="tag">Micro · DM Mono 400<br>10–11.5px · +10% track · caps</div><div class="mono" style="color:var(--accent)">Governance · policy AP-14 §3</div></div>
+    </div>
+  </div>
+</section>
+
+<a class="badge" href="index.html">← Option 03 · Blueprint</a>
+</body>
+</html>

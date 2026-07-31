@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════════════════
+   EVALZZ — "DESERT INK" DESIGN SYSTEM
+   This file is the single source of truth for colour and typography.
+   Change a value here and it updates everywhere on the site.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── Surfaces ──────────────────────────────────────────────────────────
+     bone      page background
+     shell     alternating / recessed sections
+     paper     raised cards
+     sand      solid warm fill (rarely used, good for charts later)          */
+  --color-bone: #f6f1e7;
+  --color-shell: #efe8da;
+  --color-paper: #fffdf8;
+  --color-sand: #e3d6be;
+
+  /* ── Hairlines ─────────────────────────────────────────────────────────
+     line          default 1px divider
+     line-strong   section boundaries, more presence                        */
+  --color-line: #ddd3c1;
+  --color-line-strong: #c7baa4;
+
+  /* ── Text ──────────────────────────────────────────────────────────────
+     espresso   headings + primary text   15.2:1 on bone
+     ink        body copy                  6.5:1 on bone
+     ink-muted  captions, sources          4.6:1 on bone — captions only     */
+  --color-espresso: #211d18;
+  --color-ink: #5f564b;
+  --color-ink-muted: #8a7f70;
+
+  /* ── Sienna (primary accent) ───────────────────────────────────────────
+     sienna        display type, fills, rules, buttons  — LARGE text only
+     sienna-deep   small text + links                   5.5:1 on bone
+     Use sienna-deep any time the text is under 24px.                       */
+  --color-sienna: #bf4b24;
+  --color-sienna-deep: #ab3e1c;
+  --color-sienna-tint: #f6e4dc;
+  --color-sienna-on: #fff7f2;
+
+  /* ── Olive (secondary accent) ──────────────────────────────────────────
+     Used for the dark inverted band and "verified / human-gated" states.   */
+  --color-olive: #2e4f44;
+  --color-olive-light: #4f7566;
+  --color-olive-on: #f1efe7;
+  --color-olive-ink: #b8c9c1;
+  --color-olive-label: #a9c4b7;
+  --color-apricot: #f0b79e;
+
+  /* ── Type scale ────────────────────────────────────────────────────────
+     Fluid via clamp(min, preferred, max). Line-height and tracking travel
+     with each step so headings never need manual leading classes.          */
+  --text-display: clamp(2.875rem, 8vw, 6rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.022em;
+
+  --text-h2: clamp(1.875rem, 4.6vw, 3.375rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: clamp(1.5rem, 2.6vw, 1.9375rem);
+  --text-h3--line-height: 1.1;
+  --text-h3--letter-spacing: -0.01em;
+
+  --text-stat: clamp(2.125rem, 4.4vw, 3.25rem);
+  --text-stat--line-height: 0.92;
+  --text-stat--letter-spacing: -0.02em;
+
+  --text-lede: clamp(1rem, 1.6vw, 1.125rem);
+  --text-lede--line-height: 1.62;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.2em;
+
+  /* ── Layout ────────────────────────────────────────────────────────── */
+  --spacing-gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --spacing-section: clamp(4rem, 9vw, 7.25rem);
+  --container-page: 71.25rem; /* 1140px */
+}
+
+@theme inline {
+  /* Wired to next/font in app/layout.tsx — do not hardcode font names here. */
+  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-instrument-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset for the sticky nav when jumping to an #anchor */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-bone);
+    color: var(--color-espresso);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-sienna);
+    color: var(--color-sienna-on);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sienna);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  /* Instrument Serif has no true small-caps or tabular figures; keep numerals
+     lining and tabular wherever they sit in a column. */
+  .tabular {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   Progressive enhancement: the `.js` class is set by an inline script before
+   first paint, so content is never hidden when JavaScript is unavailable.
+   Delete this block and <Reveal> to remove all motion.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@layer components {
+  [data-reveal] {
+    transition:
+      opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+      opacity: 1;
+      transform: none;
+    }
+    [data-reveal] {
+      transition: none;
+    }
+  }
+}
