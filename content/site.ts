@@ -243,7 +243,7 @@ export const site = {
         name: "Md Aabid Hussain",
         role: "Co-founder & Product Eng.",
         facts: [
-          "Built the first Evalzz platform: 800 MAU",
+          "Built an AI Platform: 800 MAU",
           "Architected it to 50,000 users",
           "3 apps live on Play Store",
           "1st nationally, Smart India Hackathon 2024",
